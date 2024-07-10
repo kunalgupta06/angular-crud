@@ -1,0 +1,82 @@
+<div mat-dialog-title class="title">
+    <h1>Employee Form</h1>
+    <div class="dialog-header">
+        <button mat-icon-button (click)= "closeDialog()" class="close-button">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>  
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Virat" formControlName="firstName" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Kohli" formControlName="lastName" required>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+              <mat-label>E-Mail</mat-label>
+              <input matInput type="email" placeholder="Ex. virat@worldcupwin.india" formControlName="email" required>
+              <mat-error *ngIf="empForm.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="empForm.get('email')?.hasError('email')">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob" required>
+                <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <mat-radio-group appearance="outline" class="gender" aria-label="Select an option" formControlName="gender" required>
+            <mat-label>Gender</mat-label>
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female"> Female</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline" >
+            <mat-label>Education</mat-label>
+            <mat-select formControlName="education" required>
+
+                <mat-option *ngFor="let val of education" [value]="val">{{val}}
+
+
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Company Name</mat-label>
+            <input matInput type="text" placeholder="Ex. Bajaj Allianz Life Insurance Company" formControlName="company" required>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <mat-label>Experience</mat-label>
+            <input matInput type="text" placeholder="Ex. 4 Years" formControlName="experience" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Package</mat-label>
+            <input matInput type="text" placeholder="Ex. 10,00,000" formControlName="package" required>
+            <mat-hint>Indian Rupees</mat-hint> 
+        </mat-form-field>
+
+    </div>
+
+    <div mat-content-actions class="action">
+        <button mat-raised-button (click)= "closeDialog()" type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ?'Update' : 'Save'}}</button>
+    </div>
+</form>

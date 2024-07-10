@@ -1,0 +1,94 @@
+ /* CSS for Filter Input */
+ .mat-form-field {
+    margin-right: 20px; /* Adjust margin as needed */
+    width: 300px; /* Adjust width as needed */
+  }
+  
+  .table-container {
+    margin-top: 20px; /* Adjust margin-top as needed */
+  }
+  
+  .mat-cell {
+    text-align: center; /* Adjust text alignment as needed */
+  }
+  
+  .mat-row, .mat-header-row {
+    background-color: #f0f0f0; /* Example background color for rows */
+  }
+  
+  .mat-row:hover {
+    background-color: #e0e0e0; /* Example hover background color */
+  }
+  
+  .mat-header-cell {
+    font-weight: bold; /* Example bold header text */
+  }
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  /* Table Header Cell */
+  th.mat-header-cell {
+    background-color: #f5f5f5; /* Example background color */
+    border-bottom: 1px solid #ccc; /* Example border */
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: auto;
+  }
+  
+  /* Table Body Cell */
+  td.mat-cell {
+    border-bottom: 1px solid #ccc; /* Example border */
+    padding: 10px;
+  }
+  
+  /* Odd Row Background Color */
+  tr.mat-row:nth-child(odd) {
+    background-color: #f9f9f9; /* Light background color */
+  }
+  
+  /* Hover Effect on Rows */
+  tr.mat-row:hover {
+    background-color: #f0f0f0; /* Slightly darker hover color */
+  }
+  
+  /* No Data Row */
+  tr.mat-row.mat-no-data-row td.mat-cell {
+    text-align: center;
+    padding: 20px 0;
+    font-style: italic;
+    color: #666;
+  }
+  
+  /* Paginator Positioning */
+  .mat-paginator {
+    margin-top: 20px;
+    justify-content: center; /* Center align paginator */
+  }
+  
+  /* Responsive Table */
+  @media screen and (max-width: 600px) {
+    /* Hide some columns on smaller screens */
+    th.mat-header-cell.mat-column-id,
+    td.mat-cell.mat-column-id {
+      display: none;
+    }
+  }
+  
+
+  .example-spacer{
+    flex: 1 1 auto;
+  }
+
+  .logout{
+    margin-left: 1425px;
+    
+  }
